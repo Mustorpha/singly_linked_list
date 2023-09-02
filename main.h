@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * sll - A Singly Linked List Structure
@@ -24,8 +25,8 @@ typedef struct singly_linked_list
 {
 	int data;
 	size_t (*print)(const struct singly_linked_list *);
-	//size_t (*len)(const sll *);
-	//sll (*add)(const sll *, const int);
+	size_t (*len)(const struct singly_linked_list *);
+	sll (*add)(sll *, const int);
 	//sll (*add_end)(const sll *, const int);
 	//int (*free)(sll *);
 	//int (*del)(sll *, size_t);
@@ -37,6 +38,9 @@ typedef struct singly_linked_list
 	struct singly_linked_list *next;
 }sll;
 
-size_t print_list(const sll *head);
+size_t sll_print(const sll *head);
+size_t sll_len(const sll *head);
+sll *sll_create(int data);
+sll *sll_add(sll *head, const int n);
 
 #endif

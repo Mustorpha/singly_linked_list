@@ -1,10 +1,10 @@
 # singly_linked_list
-<code>SLL: </code> An implementation of the singly linked list structure in C Language. The implementation assumes an integer for the stored data, which can be modified to any data type as suited to the need of the user. The associated function can also be as suitable if a custom function is available.
+<code>SLL: </code> An implementation of the singly linked list structure in C Language. The implementation assumes an integer for the stored data, which can be modified to any data type as suited to the need of the user. The associated function can also be as suitable if a custom function is available. The Linked list can be called independently which assumes that the user with assign their custom function for each action possible for the list. Or the user can call the <code>sll_create(int first_element_data)</code> function to automatically assign the default function for each action that can be taken on the list.
 
 # Structure memebers
 <code>sll.data: </code> This is the data held in the each member of the structure.
 <br>
-<code>sll.print(const sll *head, char *sep = " "): </code> This is a function that prints all the data in each element of the list, with the specify character as the separator, or space as default.
+<code>sll.print(const sll *head): </code> This is a function that prints all the data in each element of the list.
 <br>
 <code>sll.len(const sll *head): </code> This function returns the total number of elements in the linked list.
 <br>
