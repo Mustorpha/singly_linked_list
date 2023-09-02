@@ -21,17 +21,20 @@
 typedef struct sll
 {
 	int data;
-	size_t print(const sll *head, char *sep = " ");
-	size_t len(const sll *head);
-	sll add(const sll *head, const int n);
-	sll add_end(const sll *head, const int n);
-	int free(sll *head);
-	int del(sll *head, size_t index);
-	int reverse(sll *head);
-	int pop(sll *head);
-	sll get(sll *head, size_t index);
-	int sum(sll *head);
-	int insert(sll *head, size_t index);
+	size_t (*print)(const sll *, char *);
+	size_t (*len)(const sll *);
+	sll (*add)(const sll *, const int);
+	sll (*add_end)(const sll *, const int);
+	int (*free)(sll *);
+	int (*del)(sll *, size_t);
+	int (*reverse)(sll *);
+	int (*pop)(sll *);
+	sll (*get)(sll *, size_t);
+	int (*sum)(sll *);
+	int (*insert)(sll *, size_t);
+	sll *next;
 }sll;
+
+size_t print_list(const sll *head, char *sep);
 
 #endif
