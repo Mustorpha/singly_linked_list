@@ -2,6 +2,8 @@
 #define MAIN_H
 
 #include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * sll - A Singly Linked List Structure
@@ -18,23 +20,23 @@
  * @sum: sum up all the data in each element of the list
  * @insert: add an element at at a certain index of the list
 */
-typedef struct sll
+typedef struct singly_linked_list
 {
 	int data;
-	size_t (*print)(const sll *, char *);
-	size_t (*len)(const sll *);
-	sll (*add)(const sll *, const int);
-	sll (*add_end)(const sll *, const int);
-	int (*free)(sll *);
-	int (*del)(sll *, size_t);
-	int (*reverse)(sll *);
-	int (*pop)(sll *);
-	sll (*get)(sll *, size_t);
-	int (*sum)(sll *);
-	int (*insert)(sll *, size_t);
-	sll *next;
+	size_t (*print)(const struct singly_linked_list *);
+	//size_t (*len)(const sll *);
+	//sll (*add)(const sll *, const int);
+	//sll (*add_end)(const sll *, const int);
+	//int (*free)(sll *);
+	//int (*del)(sll *, size_t);
+	//int (*reverse)(sll *);
+	//int (*pop)(sll *);
+	//sll (*get)(sll *, size_t);
+	//int (*sum)(sll *);
+	//int (*insert)(sll *, size_t);
+	struct singly_linked_list *next;
 }sll;
 
-size_t print_list(const sll *head, char *sep);
+size_t print_list(const sll *head);
 
 #endif
